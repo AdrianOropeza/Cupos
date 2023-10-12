@@ -1,7 +1,7 @@
 import requests
 import concurrent.futures
 
-url = "http://127.0.0.1:8000/validador_cupos"
+url = "https://cupos-available.onrender.com/validador_cupos"
 
 def realizar_solicitud(i):
     response = requests.post(url, json={"correo": f"usuario{i}@ejemplo.com", "tipo": "PO"})

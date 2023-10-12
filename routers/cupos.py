@@ -1,5 +1,5 @@
 from fastapi import APIRouter, HTTPException
-from fastapi_utils.tasks import repeat_every # pip install fastapi-utils
+from fastapi_utils.tasks import repeat_every 
 
 router = APIRouter()
 
@@ -8,9 +8,9 @@ cupos = {
         "PO": 10
         }
 
-# Función para reiniciar los cupos después de 10 segundos
+# Función para reiniciar los cupos después de 60 segundos
 @router.on_event("startup")
-@repeat_every(seconds=60) 
+@repeat_every(seconds=3600) 
 def init_data():
 	global cupos
 	cupos["GC"] = 10
